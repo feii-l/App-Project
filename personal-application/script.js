@@ -7,8 +7,16 @@ function updateCalendar() {
 
     const month= month_names[now.getMonth()];
 
-    document.getElementById("day").textContent = day;
+    document.getElementById("daynum").textContent = day;
     document.getElementById("month").textContent = month;
 }
 
 updateCalendar();
+
+async function getDailyQuote() {
+  const response = await fetch('https://zenquotes.io/api/today');
+  const data = await response.json();
+  document.getElementById('quote').innerText = `"${data[0].q}"`;
+}
+
+getDailyQuote();
