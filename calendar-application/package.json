@@ -1,9 +1,21 @@
 {
-  "name": "personal-application",
+  "name": "calendar-application",
   "version": "1.0.0",
-  "description": "",
+  "description": "A calendar widget",
+  "author": "Fei",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^34.5.8",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.fei.calendar",
+    "win": {
+      "target": "nsis"
+    }
   }
 }
